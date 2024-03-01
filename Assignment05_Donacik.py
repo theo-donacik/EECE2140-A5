@@ -127,4 +127,45 @@ class BasicMathOperations:
     """
     return type(val).__name__
 
+def main():
+  math = BasicMathOperations()
+  inpt = -1
+  while inpt != 10:
+    inpt = int(input("""[0] Greeting
+[1] Add
+[2] Operation
+[3] Square
+[4] Factorial
+[5] Count
+[6] Hypotenuse
+[7] Area
+[8] Power
+[9] Type
+[10 Quit]
+What would you like to do: """))
 
+    try:
+      match inpt:
+        case 0: math.greet(input("First name: "), 
+                           input("Last name: "))
+        case 1: print("The sum is", str(math.add_numbers(int(input("Num 1: ")),
+                                                         int(input("Num 2: ")))))
+        case 2: print("The result is", str(math.operation(int(input("Num 1: ")),
+                                                          int(input("Num 2: ")),
+                                                          input("Operator: "))))
+        case 3: print("The square is", str(math.calculateSquare(int(input("Number: ")))))
+        case 4: print("The factorial is", str(math.factorial(int(input("Number: ")))))
+        case 5: math.counting(int(input("Start: ")), int(input("End: ")))
+        case 6: print("The hypotenuse is", str(math.calculateHypotenuse(int(input("Base: ")),
+                                                                        int(input("Perpandicular: ")))))
+        case 7: print("The area is", str(math.area(int(input("width: ")),
+                                                   int(input("height: ")))))
+        case 8: print("The power is", str(math.power(int(input("base: ")),
+                                                     int(input("exponent: ")))))
+        case 9: print("The type is", str(math.type(input("Value: "))))
+        case 10: print("Bye!") 
+        case _: print("Invalid option")
+    except:
+      print("Invalid input. Try again")
+
+main()
