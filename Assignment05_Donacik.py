@@ -88,11 +88,43 @@ class BasicMathOperations:
     """Gets the hypotenuse of a right angle triangle given the base and perpindicular
     Args:
         base (int/float): The base length of the triangle.
-        perpindicular (int/float): The base length of the triangle.
+        perpindicular (int/float): The perpindicular length of the triangle.
                 
     Returns:
         int/float: The hypotenuse 
     """
     return ((self.calculateSquare(base) + self.calculateSquare(perpindicular)) ** .5)
+
+  def area(self, width, height):
+    """Gets the area of a rectangle given a width and height
+    Args:
+        width (int/float): The width of the rectangle.
+        height (int/float): The height of the triangle.
+                
+    Returns:
+        int/float: The area
+    """
+    return width * height
+
+  def power(self, base, exponent):
+    """Gets the base to the power of exponent
+    Args:
+        base (int/float): The base number.
+        exponent (int/float): The exponent number.
+                
+    Returns:
+        int/float: Base ^ exponent
+    """
+    return base ** exponent
+
+  def type(self, val):
+    """Gets the type of val
+    Args:
+        val (int/float): The value to get the type of.
+                
+    Returns:
+        string: The type of val  
+    """
+    return type(val).__name__
 
 
